@@ -42,6 +42,7 @@ function downloadImage() {
   var anchor = document.createElement("a");
   anchor.href = canvas.toDataURL("image/png");
   anchor.download = "IMAGE.PNG";
+  anchor.click()
 }
   
 const overlay = document.querySelector(".overlay");
