@@ -13,7 +13,7 @@ function loadImage() {
     var ctx = text.getContext("2d");
     ctx.font = "150px Arial";
     ctx.save();
-    ctx.translate(550, 610);
+    ctx.translate(550, 585);
     ctx.rotate(-1 * Math.PI / 180);
     ctx.fillText(document.getElementById("text-input").value, 0, 0);
     ctx.restore();
@@ -36,6 +36,13 @@ function loadImage() {
   };
 }
 loadImage()
+
+function downloadImage() {
+  var canvas = document.getElementById("canvas");
+  var anchor = document.createElement("a");
+  anchor.href = canvas.toDataURL("image/png");
+  anchor.download = "IMAGE.PNG";
+}
   
 const overlay = document.querySelector(".overlay");
 const container = document.querySelector(".img-container");
