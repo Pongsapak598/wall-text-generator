@@ -8,6 +8,17 @@ function loadImage() {
   image.src = "image.png";
   image2.src = "image2.png";
 
+  function drawText() {
+    var text = document.getElementById("canvas");
+    var ctx = text.getContext("2d");
+    ctx.font = "150px Arial";
+    ctx.save();
+    ctx.translate(550, 610);
+    ctx.rotate(-1 * Math.PI / 180);
+    ctx.fillText(document.getElementById("text-input").value, 0, 0);
+    ctx.restore();
+  }
+
   image.onload = () => {
     
     canvas.width = image.width;
@@ -15,6 +26,10 @@ function loadImage() {
     
     context.drawImage(image2, 0, 0);
     
+    context.globalCompositeOperation="destination-over";
+
+    drawText();
+
     context.globalCompositeOperation="destination-over";
     
     context.drawImage(image, 0, 0);
@@ -42,6 +57,7 @@ function removeBorder() {
     } else {
       input.classList.remove("border");
     }
+    loadImage();
   });
 }
 removeBorder();
