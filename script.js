@@ -3,22 +3,33 @@ const context = canvas.getContext("2d");
 
 const image = new Image();
 const image2 = new Image();
+let s = '';
 
 function loadImage() {
   image.src = "image.png";
   image2.src = "image2.png";
 
+  
+
   function drawText() {
-    var text = document.getElementById("canvas");
-    var ctx = text.getContext("2d");
-    ctx.font = "150px Arial";
+    const text = document.getElementById("canvas");
+    const ctx = text.getContext("2d");
+    const input = document.getElementById("font-slider");
+    const font = input.value + "px Arial";
+    ctx.font = font;
+
+    const color = document.getElementById("color-selector").value;
+    ctx.fillStyle = color;
     ctx.save();
-    ctx.translate(550, 585);
+
+    const upDown = document.getElementById("upDown-slider").value;
+    const leftRight = document.getElementById("leftRight-slider").value;
+    ctx.translate(upDown, leftRight);
     ctx.rotate(-1 * Math.PI / 180);
     ctx.fillText(document.getElementById("text-input").value, 0, 0);
     ctx.restore();
   }
-
+  
   image.onload = () => {
     
     canvas.width = image.width;
