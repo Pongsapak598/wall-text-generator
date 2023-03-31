@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  padding: 80px;
+}
+
+canvas {
+  width: 1200px;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  height: 15vh;
+  width: 30vw;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  z-index: 1;
+}
+
+input {
+  height: 307px;
+  width: 750px;
+  transform: rotate(-1.5deg);
+  background-color: transparent;
+  border: 5px solid red;
+  font-size: 130px;
+}
+
+input.border {
+  border: none;
+}

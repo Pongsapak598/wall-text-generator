@@ -1,30 +1,47 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
+
 const image = new Image();
-image.src = "image.png";
+const image2 = new Image();
 
-image.onload = () => {
-  // Set the canvas width and height to match the image size
-  canvas.width = image.width;
-  canvas.height = image.height;
+function loadImage() {
+  image.src = "image.png";
+  image2.src = "image2.png";
 
-  // Draw the image on the canvas
-  context.drawImage(image, 0, 0);
-};
-
+  image.onload = () => {
+    
+    canvas.width = image.width;
+    canvas.height = image.height;
+    
+    context.drawImage(image2, 0, 0);
+    
+    context.globalCompositeOperation="destination-over";
+    
+    context.drawImage(image, 0, 0);
+  };
+}
+loadImage()
+  
 const overlay = document.querySelector(".overlay");
 const container = document.querySelector(".img-container");
-container.style.position = "relative";
-overlay.style.position = "absolute";
-overlay.style.top = "50%";
-overlay.style.left = "65%";
-overlay.style.transform = "translate(-50%, -50%)";
 
-const input = document.getElementById("text-input");
-input.addEventListener("input", () => {
-  if (input.value !== "") {
-    input.classList.add("border");
-  } else {
-    input.classList.remove("border");
-  }
-});
+function setBoxPosition() {
+  container.style.position = "relative";
+  overlay.style.position = "absolute";
+  overlay.style.top = "50%";
+  overlay.style.left = "65%";
+  overlay.style.transform = "translate(-50%, -50%)";
+}
+setBoxPosition();
+
+function removeBorder() {
+  const input = document.getElementById("text-input");
+  input.addEventListener("input", () => {
+    if (input.value !== "") {
+      input.classList.add("border");
+    } else {
+      input.classList.remove("border");
+    }
+  });
+}
+removeBorder();

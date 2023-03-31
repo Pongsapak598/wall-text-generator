@@ -19,6 +19,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3em;
+    position: relative;
+    position: absolute;
+
   }
   
   input {
@@ -28,11 +31,12 @@ body {
     background-color: transparent;
     border: 5px solid red;
     font-size: 130px;
+    color: red;
   }
   
   input.border {
     border: none;
   }
-  
+
 
   
