@@ -5,34 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <script src="script.js" defer></script>
     <title>Document</title>
   </head>
+
   <body>
     <div class="img-container">
       <canvas id="canvas"></canvas>
-      <div class="overlay">
-        <input type="text" id="text-input" />
-      </div>
     </div>
 
     <div class="side-container">
-      
-      <label for="font-slider">ขนาดฟ้อนต์</label>
-      <input type="range" min="50" max="300" value="150" class="slider" id="font-slider" oninput="loadImage()">
 
-      <label for="font-slider">บน-ล่าง</label>
-      <input type="range" min="245" max="645" value="445" class="slider" id="leftRight-slider" oninput="loadImage()">
+      <div class="upper-part">
+        <label for="text-input">อยากให้เขียนว่าอะไร?</label>
+        <input type="text" id="text-input" oninput="loadImage()">
+      </div>
+      <div class="middle-part">
+        <label for="font-slider">ขนาดฟ้อนต์</label>
+        <input type="range" min="50" max="300" value="150" class="slider" id="font-slider" oninput="loadImage()">
 
-      <label for="font-slider">ซ้าย-ขวา</label>
-      <input type="range" min="200" max="600" value="400" class="slider" id="upDown-slider" oninput="loadImage()">
+        <label for="font-slider">บน-ล่าง</label>
+        <input type="range" min="245" max="645" value="445" class="slider" id="leftRight-slider" oninput="loadImage()">
 
-      <label for="font-slider">ความเข้ม</label>
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <label for="font-slider">ซ้าย-ขวา</label>
+        <input type="range" min="200" max="600" value="400" class="slider" id="upDown-slider" oninput="loadImage()">
 
-      <input type="color" id="color-selector" oninput="loadImage()">
+        <label for="font-slider">ความเอียง</label>
+        <input type="range" min="-45" max="45" value="-1" class="slider" id="tilt-slider" oninput="loadImage()">
 
-      <button id="download-btn" onclick="downloadImage();">ดาวน์โหลด</button>
+      <div class="lower-part">
+        <label for="color-selector">เลือกสี</label>
+        <input type="color" id="color-selector" oninput="loadImage()">
+      </div>
+
+        <button id="download-btn" onclick="downloadImage();">ดาวน์โหลด</button>
+      </div>
     </div>
   </body>
 </html>

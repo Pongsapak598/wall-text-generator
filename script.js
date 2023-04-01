@@ -9,8 +9,6 @@ function loadImage() {
   image.src = "image.png";
   image2.src = "image2.png";
 
-  
-
   function drawText() {
     const text = document.getElementById("canvas");
     const ctx = text.getContext("2d");
@@ -24,8 +22,10 @@ function loadImage() {
 
     const upDown = document.getElementById("upDown-slider").value;
     const leftRight = document.getElementById("leftRight-slider").value;
+    const tilt = document.getElementById("tilt-slider").value; // Access tilt slider value
+    const textRotate = tilt * Math.PI / 180; // Calculate rotation degree from slider value
     ctx.translate(upDown, leftRight);
-    ctx.rotate(-1 * Math.PI / 180);
+    ctx.rotate(textRotate);
     ctx.fillText(document.getElementById("text-input").value, 0, 0);
     ctx.restore();
   }
@@ -59,13 +59,6 @@ function downloadImage() {
 const overlay = document.querySelector(".overlay");
 const container = document.querySelector(".img-container");
 
-function setBoxPosition() {
-  container.style.position = "relative";
-  overlay.style.position = "absolute";
-  overlay.style.top = "50%";
-  overlay.style.left = "65%";
-  overlay.style.transform = "translate(-50%, -50%)";
-}
 setBoxPosition();
 
 function removeBorder() {
