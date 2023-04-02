@@ -10,7 +10,7 @@ body {
 #text-input {
   font-size: 0.85em;
   height: 39px;
-  max-width: 330px;
+  max-width: 100%;
   width: 100%;
 }
   
@@ -28,7 +28,7 @@ input.border {
   height: 35px;
   font-size: 0.7em;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .side-container {
@@ -62,10 +62,6 @@ input.border {
   padding-bottom: 26px;
 }
 
-.lower-part label {
-
-}
-
 .side-container input {
   margin-bottom: 25px;
   margin-top: 10px;
@@ -78,4 +74,45 @@ input.border {
 
 label {
   color: white;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.269);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1520px) {
+  body {
+    margin: 50px;
+  }
+  .side-container {
+    margin-left: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-self: flex-start;
+  }
+
+  .middle-part {
+    box-shadow: none;
+  }
+
+  canvas {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 102%;
+  }
+
+  .upper-part {
+    padding-top: 26px;
+  }
+
+  #download-btn {
+    margin-bottom: 27px;
+  }
+}
+
+@media (max-width: 440px) {
+  .side-container {
+    max-width: 100%;
+  }
 }
