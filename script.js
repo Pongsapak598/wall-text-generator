@@ -1,3 +1,30 @@
+async function preloadFonts() {
+  const sovPhonbook = new FontFace(
+    "phon",
+    "url(fonts/phon/sov_phon-webfont.woff2)",
+    { style: "normal", weight: "normal" }
+  );
+  const espressa = new FontFace(
+    "espressa",
+    "url(fonts/espressa/ACEspressa.woff2)",
+    { style: "normal", weight: "normal" }
+  );
+  const rebel = new FontFace("rebel", "url(fonts/rebel/FCRebelRegular.woff2)", {
+    style: "normal",
+    weight: "normal",
+  });
+
+  await Promise.all([sovPhonbook.load(), espressa.load(), rebel.load()]);
+
+  document.fonts.add(sovPhonbook);
+  document.fonts.add(espressa);
+  document.fonts.add(rebel);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  preloadFonts();
+});
+
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
