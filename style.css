@@ -1,7 +1,23 @@
 @font-face {
   font-family: 'sov_phonbook';
-  src: url('sov_phon-webfont.woff2') format('woff2'),
-       url('sov_phon-webfont.woff') format('woff');
+  src: url('fonts/phon/sov_phon-webfont.woff2') format('woff2'),
+       url('fonts/phon/sov_phon-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'espressa';
+  src: url('fonts/espressa/ACEspressa.woff2') format('woff2'),
+      url('fonts/espressa/ACEspressa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rebel';
+  src: url('fonts/rebel/FCRebelRegular.woff2') format('woff2'),
+       url('fonts/rebel/FCRebelRegular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -91,6 +107,16 @@ label {
   margin-bottom: 20px;
 }
 
+.font-selector {
+  margin-bottom: 29px;
+  display: flex;
+  gap: 26px;
+}
+
+#fonts {
+  width: 100%;
+}
+
 @media (min-width: 1520px) {
   body {
     margin: 50px;
@@ -124,3 +150,4 @@ label {
     max-width: 100%;
   }
 }
+

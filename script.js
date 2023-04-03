@@ -3,32 +3,34 @@ const context = canvas.getContext("2d");
 
 const image = new Image();
 const image2 = new Image();
-let s = '';
+
+let font = "";
+
+function drawText() {
+  const text = document.getElementById("canvas");
+  const ctx = text.getContext("2d");
+  const input = document.getElementById("font-slider");
+  const fontName = document.getElementById('fonts').value;
+  font = input.value + "px " + fontName;
+  ctx.font = font;
+
+  const color = document.getElementById("color-selector").value;
+  ctx.fillStyle = color;
+  ctx.save();
+
+  const upDown = document.getElementById("upDown-slider").value;
+  const leftRight = document.getElementById("leftRight-slider").value;
+  const tilt = document.getElementById("tilt-slider").value;
+  const textRotate = tilt * Math.PI / 180;
+  ctx.translate(upDown, leftRight);
+  ctx.rotate(textRotate);
+  ctx.fillText(document.getElementById("text-input").value, 0, 0);
+  ctx.restore();
+}
 
 function loadImage() {
   image.src = "image.png";
   image2.src = "image2.png";
-
-  function drawText() {
-    const text = document.getElementById("canvas");
-    const ctx = text.getContext("2d");
-    const input = document.getElementById("font-slider");
-    const font = input.value + "px sov_phonbook";
-    ctx.font = font;
-
-    const color = document.getElementById("color-selector").value;
-    ctx.fillStyle = color;
-    ctx.save();
-
-    const upDown = document.getElementById("upDown-slider").value;
-    const leftRight = document.getElementById("leftRight-slider").value;
-    const tilt = document.getElementById("tilt-slider").value; // Access tilt slider value
-    const textRotate = tilt * Math.PI / 180; // Calculate rotation degree from slider value
-    ctx.translate(upDown, leftRight);
-    ctx.rotate(textRotate);
-    ctx.fillText(document.getElementById("text-input").value, 0, 0);
-    ctx.restore();
-  }
   
   image.onload = () => {
     
@@ -46,11 +48,11 @@ function loadImage() {
     context.drawImage(image, 0, 0);
   };
 }
-loadImage()
+loadImage();
 
 function downloadImage() {
-  var canvas = document.getElementById("canvas");
-  var anchor = document.createElement("a");
+  const canvas = document.getElementById("canvas");
+  const anchor = document.createElement("a");
   anchor.href = canvas.toDataURL("image/png");
   anchor.download = "IMAGE.PNG";
   anchor.click()
@@ -58,8 +60,6 @@ function downloadImage() {
   
 const overlay = document.querySelector(".overlay");
 const container = document.querySelector(".img-container");
-
-setBoxPosition();
 
 function removeBorder() {
   const input = document.getElementById("text-input");

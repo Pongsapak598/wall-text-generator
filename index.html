@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preload" href="Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <script src="script.js" defer></script>
     <title>Document</title>
   </head>
@@ -18,7 +17,7 @@
     <div class="side-container">
 
       <div class="upper-part">
-        <label for="text-input">อยากให้เขียนว่าอะไร Thest?</label>
+        <label for="text-input">อยากให้เขียนว่าอะไร?</label>
         <input type="text" id="text-input" oninput="loadImage()">
       </div>
       <div class="middle-part">
@@ -37,6 +36,16 @@
       <div class="lower-part">
         <label for="color-selector">เลือกสี</label>
         <input type="color" id="color-selector" oninput="loadImage()">
+      </div>
+
+      <div class="font-selector">
+        <label for="fonts">ฟอนต์</label>
+        <select name="fonts" id="fonts" value="rebel" onchange=" loadImage();">
+          <option value="Arial" onselect="loadImage()">Aria</option>
+          <option value="rebel" onselect="loadImage()">Rebel</option>
+          <option value="espressa" onselect="loadImage()">Espressa</option>
+          <option value="phon" onselect="loadImage()">Phon</option>
+        </select>
       </div>
 
         <button id="download-btn" onclick="showDisclaimer();">ดาวน์โหลด</button>
