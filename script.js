@@ -13,7 +13,7 @@ function loadImage() {
     const text = document.getElementById("canvas");
     const ctx = text.getContext("2d");
     const input = document.getElementById("font-slider");
-    const font = input.value + "px Arial";
+    const font = input.value + "px sov_phonbook";
     ctx.font = font;
 
     const color = document.getElementById("color-selector").value;
@@ -75,7 +75,7 @@ function removeBorder() {
 removeBorder();
 
 function showDisclaimer() {
-  if (confirm("ทุกรูปภาพที่ถูกจัดทำโดยเว็บไซต์นี้ เป็นความรับผิดชอบของผู้ใช้งานแต่เพียงผู้เดียว \n\nเว็บไซต์นี้ ไม่อนุญาตให้ผู้ใช้งานสร้างรูปภาพที่มีจุดประสงค์ดูหมิ่น เกลียดชัง หรือแสดงความอาฆาตมาดร้ายต่อบุคคลใด")) {
+  if (confirm("ทุกรูปภาพที่ถูกจัดทำโดยเว็บไซต์นี้ เป็นความรับผิดชอบของผู้ใช้งานแต่เพียงผู้เดียว \n\n")) {
     downloadImage();
   }
 }

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'sov_phonbook';
+  src: url('sov_phon-webfont.woff2') format('woff2'),
+       url('sov_phon-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -80,7 +88,7 @@ label {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.269);
   line-height: 1.35;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 1520px) {
