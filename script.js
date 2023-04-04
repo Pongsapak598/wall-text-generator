@@ -1,3 +1,17 @@
+/*link Mixpanel*/
+
+import mixpanel from 'mixpanel-browser';
+
+mixpanel.init('8346b99cbf36b699faf1161be71d7803', {debug: true}); 
+
+mixpanel.identify()
+
+mixpanel.track('Signed Up', {
+  'Signup Type': 'Referral',
+});
+
+/*Preload*/
+
 async function preloadFonts() {
   const sovPhonbook = new FontFace(
     "phon",
@@ -24,6 +38,8 @@ async function preloadFonts() {
 document.addEventListener("DOMContentLoaded", () => {
   preloadFonts();
 });
+
+/*Code*/
 
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
