@@ -6,9 +6,7 @@ mixpanel.init('8346b99cbf36b699faf1161be71d7803', {debug: true});
 
 mixpanel.identify()
 
-mixpanel.track('Signed Up', {
-  'Signup Type': 'Referral',
-});
+mixpanel.track("Viewed Page");
 
 /*Preload*/
 
