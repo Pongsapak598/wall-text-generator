@@ -1,15 +1,3 @@
-/*link Mixpanel*/
-
-import mixpanel from 'mixpanel-browser';
-
-mixpanel.init('8346b99cbf36b699faf1161be71d7803', {debug: true}); 
-
-mixpanel.identify()
-
-mixpanel.track("Viewed Page");
-
-/*Preload*/
-
 async function preloadFonts() {
   const sovPhonbook = new FontFace(
     "phon",
